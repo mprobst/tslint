@@ -22,6 +22,17 @@ const OPTION_ALWAYS = "always";
 const OPTION_NEVER = "never";
 
 export class Rule extends Lint.Rules.AbstractRule {
+    /* tslint:disable:object-literal-sort-keys */
+    public static metadata: Lint.IRuleMetadata = {
+        ruleName: "semicolon",
+        description: "Requires semicolons at the end of every statement.",
+        optionsDescription: "Not configurable.",
+        options: {},
+        optionExamples: ["true"],
+        type: "style",
+    };
+    /* tslint:enable:object-literal-sort-keys */
+
     public static FAILURE_STRING_MISSING = "missing semicolon";
     public static FAILURE_STRING_UNNECESSARY = "unnecessary semicolon";
 
