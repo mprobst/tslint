@@ -16,6 +16,8 @@
         "./*.ts"
     ],
     "files": [
+        "../typings/colors/colors.d.ts",
+        "../typings/diff/diff.d.ts",
         "../typings/findup-sync/findup-sync.d.ts",
         "../typings/glob/glob.d.ts",
         "../typings/js-yaml/js-yaml.d.ts",

@@ -24,10 +24,11 @@ export class Rule extends Lint.Rules.AbstractRule {
         ruleName: "typedef",
         description: "Requires type definitions to exist.",
         optionsDescription: Lint.Utils.dedent`
-            Five arguments may be optionally provided:
+            Six arguments may be optionally provided:
 
             * \`"call-signature"\` checks return type of functions.
-            * \`"parameter"\` checks type specifier of function parameters.
+            * \`"parameter"\` checks type specifier of function parameters for non-arrow functions.
+            * \`"arrow-parameter"\` checks type specifier of function parameters for arrow functions.
             * \`"property-declaration"\` checks return types of interface properties.
             * \`"variable-declaration"\` checks variable declarations.
             * \`"member-variable-declaration"\` checks member variable declarations.`,
@@ -35,10 +36,17 @@ export class Rule extends Lint.Rules.AbstractRule {
             type: "list",
             listType: {
                 type: "enum",
-                enumValues: ["call-signature", "parameter", "property-declaration", "variable-declaration", "member-variable-declaration"],
+                enumValues: [
+                    "call-signature",
+                    "parameter",
+                    "arrow-parameter",
+                    "property-declaration",
+                    "variable-declaration",
+                    "member-variable-declaration",
+                ],
             },
         },
-        optionExamples: ['[true, "call-signature", "member-variable-declaration"]'],
+        optionExamples: ['[true, "call-signature", "parameter", "member-variable-declaration"]'],
         type: "typescript",
     };
     /* tslint:enable:object-literal-sort-keys */

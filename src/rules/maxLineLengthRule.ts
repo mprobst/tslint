@@ -29,7 +29,7 @@ export class Rule extends Lint.Rules.AbstractRule {
             various editors, IDEs, and diff viewers.`,
         optionsDescription: "An integer indicating the max length of lines.",
         options: {
-            type: "number"
+            type: "number",
         },
         optionExamples: ["[true, 120]"],
         type: "maintainability",
