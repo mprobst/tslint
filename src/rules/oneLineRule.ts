@@ -30,9 +30,10 @@ export class Rule extends Lint.Rules.AbstractRule {
         ruleName: "one-line",
         description: "Requires the specified tokens to be on the same line as the expression preceding them.",
         optionsDescription: Lint.Utils.dedent`
-            Four arguments may be optionally provided:
+            Five arguments may be optionally provided:
 
             * \`"check-catch"\` checks that \`catch\` is on the same line as the closing brace for \`try\`.
+            * \`"check-finally"\` checks that \`finally\` is on the same line as the closing brace for \`catch\`.
             * \`"check-else"\` checks that \`else\` is on the same line as the closing brace for \`if\`.
             * \`"check-open-brace"\` checks that an open brace falls on the same line as its preceding expression.
             * \`"check-whitespace"\` checks preceding whitespace for the specified tokens.`,
@@ -40,10 +41,10 @@ export class Rule extends Lint.Rules.AbstractRule {
             type: "list",
             listType: {
                 type: "enum",
-                enumValues: ["check-catch", "check-else", "check-open-brace", "check-whitespace"],
+                enumValues: ["check-catch", "check-finally", "check-else", "check-open-brace", "check-whitespace"],
             },
         },
-        optionExamples: ['[true, "check-catch", "check-else"]'],
+        optionExamples: ['[true, "check-catch", "check-finally", "check-else"]'],
         type: "style",
     };
     /* tslint:enable:object-literal-sort-keys */
