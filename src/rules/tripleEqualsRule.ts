@@ -31,17 +31,18 @@ export class Rule extends Lint.Rules.AbstractRule {
         ruleName: "triple-equals",
         description: "Requires `===` and `!==` in place of `==` and `!=`.",
         optionsDescription: Lint.Utils.dedent `
-            One argument may be optionally provided:
+            Two arguments may be optionally provided:
 
-            * \`"allow-null-check"\` allows \`==\` and \`!=\` when comparing to \`null\`.`,
+            * \`"allow-null-check"\` allows \`==\` and \`!=\` when comparing to \`null\`.
+            * \`"allow-undefined-check"\` allows \`==\` and \`!=\` when comparing to \`undefined\`.`,
         options: {
             type: "list",
             listType: {
                 type: "enum",
-                enumValues: [OPTION_ALLOW_NULL_CHECK],
+                enumValues: [OPTION_ALLOW_NULL_CHECK, OPTION_ALLOW_UNDEFINED_CHECK],
             },
         },
-        optionExamples: ["true", '[true, "allow-null-check"]'],
+        optionExamples: ["true", '[true, "allow-null-check"]', '[true, "allow-undefined-check"]'],
         type: "functionality",
     };
     /* tslint:enable:object-literal-sort-keys */
