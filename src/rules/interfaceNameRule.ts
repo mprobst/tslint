@@ -30,13 +30,13 @@ export class Rule extends Lint.Rules.AbstractRule {
         optionsDescription: Lint.Utils.dedent`
             One of the following two options must be provided:
 
-            * \`"#{OPTION_ALWAYS}"\` requires interface names to start with an "I"
-            * \`"#{OPTION_NEVER}"\` requires interface names to not have an "I" prefix`,
+            * \`"${OPTION_ALWAYS}"\` requires interface names to start with an "I"
+            * \`"${OPTION_NEVER}"\` requires interface names to not have an "I" prefix`,
         options: {
             type: "enum",
             enumValues: [OPTION_ALWAYS, OPTION_NEVER],
         },
-        optionExamples: [`[true, "#{OPTION_ALWAYS}"]`, `[true, "#{OPTION_NEVER}"]`],
+        optionExamples: [`[true, "${OPTION_ALWAYS}"]`, `[true, "${OPTION_NEVER}"]`],
         type: "style",
     };
     /* tslint:enable:object-literal-sort-keys */
